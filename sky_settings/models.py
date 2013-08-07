@@ -35,6 +35,9 @@ class Setting(_base_model):
     class Meta:
         ordering = ('name',)
 
+    def __unicode__(self):
+        return self.name
+
     def cast(self):
         if self.type == 's':
             return self.value
