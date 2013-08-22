@@ -39,11 +39,11 @@ class Setting(_base_model):
         return self.name
 
     def cast(self):
-        if self.type == 's':
+        if self.setting_type == 's':
             return self.value
-        if self.type == 'b':
+        if self.setting_type == 'b':
             return bool(int(self.value))
-        if self.type == 'n':
+        if self.setting_type == 'n':
             return float(self.value)
 
     @classmethod
