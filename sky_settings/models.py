@@ -31,7 +31,6 @@ class Setting(_base_model):
     setting_type = models.CharField(max_length=16, choices=TYPE_CHOICES, default=TYPE_STRING)
     name = models.CharField(max_length=1024)
     value = models.TextField()
-    description = models.TextField()
 
     class Meta:
         ordering = ('name',)
@@ -63,3 +62,6 @@ class Setting(_base_model):
         setting.value = str(value)
         setting.save()
         return value
+
+
+
