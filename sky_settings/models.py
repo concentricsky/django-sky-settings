@@ -5,6 +5,7 @@ _base_model = models.Model
 
 try:
     import basic_models
+
     class _basic_setting_model(basic_models.TimestampedModel, basic_models.UserModel):
         pass
     _base_model = _basic_setting_model
@@ -31,7 +32,7 @@ class Setting(_base_model):
     setting_type = models.CharField(max_length=16, choices=TYPE_CHOICES, default=TYPE_STRING)
     name = models.CharField(max_length=1024)
     value = models.TextField()
-    description = models.TextField()
+    description = models.TextField(blank=True)
 
     class Meta:
         ordering = ('name',)
@@ -52,7 +53,7 @@ class Setting(_base_model):
         try:
             mngr = getattr(cls, 'cached', cls.objects)
             setting = mngr.get(name=name)
-        except Setting.DoesNotExist as e:
+        except Setting.DoesNotExist:
             return default
         return setting.cast()
 
