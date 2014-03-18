@@ -16,9 +16,9 @@ except ImportError as e:
 
 
 class SettingAdmin(_modeladmin_class):
-    list_display = ('name','setting_type','value','description')
+    list_display = ('name','setting_type','value')
     search_fields = ('name','value')
     fieldsets = (
-        (None, {'fields':('setting_type','name','value')}),
+        (None, {'fields':('setting_type','name','value','description')}),
     )
 admin.site.register(Setting, SettingAdmin)
