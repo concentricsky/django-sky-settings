@@ -10,8 +10,6 @@ Sky Settings provides a model to allow configuration of site-wide settings using
 - [Version History](#version-history)
 - [Installation](#installation)
 - [Getting Started](#getting-started)
-  - [Default Features](#default-features)
-  - [Additional Features](#additional-features)
 - [License](#license)
 - [About Concentric Sky](#about-concentric-sky)
 
